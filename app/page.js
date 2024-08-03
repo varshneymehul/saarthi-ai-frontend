@@ -1,113 +1,270 @@
+"use client";
 import Image from "next/image";
+import image1 from "../public/carousel-hero/image1.jpg";
+import image2 from "../public/carousel-hero/image2.webp";
+import image3 from "../public/carousel-hero/image3.jpg";
+import image4 from "../public/carousel-hero/image4.jpg";
+
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import ServicesCard from "@/components/ServicesCard";
+import ReviewCard from "@/components/ReviewCard";
+import FAQCard from "@/components/FAQCard";
+import { useState } from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className="bg-amber-500 w-full md:rounded-b-[40px] text-center rounded-b-3xl h-[85vh] flex flex-col justify-center">
+        <div className="md:w-2/4 mx-auto">
+          <h3 className="text-sm md:text-md ">empowering local businesses</h3>
+          <h1 className="text-3xl md:text-5xl">
+            The one stop solution for <br />
+            small retail stores
+          </h1>
+          <h2 className="text-2xl md:text-4xl">
+            Discover the power of{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-purple-800">
+              Saarthi Sewa
+            </span>
+          </h2>
+
+          <button className="bg-black w-fit mx-auto text-white px-4 py-2 rounded-3xl mt-4">
+            Get Started
+          </button>
         </div>
+
+        <Splide
+          extensions={{ AutoScroll }}
+          options={{
+            width: "100%",
+            rewind: true,
+            height: "18rem",
+            type: "loop",
+            padding: "2rem",
+            focus: "center",
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            perPage: 3,
+            breakpoints: {
+              640: {
+                perPage: 1,
+              },
+              1024: {
+                perPage: 2,
+              },
+            },
+            autoScroll: {
+              speed: 1,
+            },
+          }}
+          aria-label="kirana images"
+        >
+          <SplideSlide>
+            <Image
+              className="rounded-3xl h-full w-auto p-4"
+              src={image1}
+              height={600}
+              width={500}
+              alt="Image 1"
+            />
+          </SplideSlide>
+          <SplideSlide>
+            <Image
+              className="rounded-3xl h-full w-auto  p-4"
+              src={image2}
+              height={600}
+              width={500}
+              alt="Image 1"
+            />
+          </SplideSlide>
+          <SplideSlide>
+            <Image
+              className="rounded-3xl h-full w-auto   p-4"
+              src={image3}
+              height={600}
+              width={500}
+              alt="Image 1"
+            />
+          </SplideSlide>
+          <SplideSlide>
+            <Image
+              className="rounded-3xl h-full w-auto  p-4"
+              src={image4}
+              height={600}
+              width={500}
+              alt="Image 1"
+            />
+          </SplideSlide>
+        </Splide>
+
+        {/* Services */}
       </div>
+      <section className="flex flex-col items-center p-6 md:p-12">
+        <h1 className="text-3xl md:text-5xl p-4 text-stone-800">
+          Services we offer
+        </h1>
+        <div class="relative flex py-5 items-center">
+          <div class="flex-grow border-t border-gray-800"></div>
+          <span class="flex-shrink mx-4 ">
+            <h2 className="text-2xl">
+              to our{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-lime-800">
+                customers
+              </span>{" "}
+            </h2>
+          </span>
+          <div class="flex-grow border-t border-gray-800"></div>
+        </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="md:flex mx-6 md:mx-12">
+          <ServicesCard
+            img={image1}
+            alt="image1"
+            title="Smart Shopping Cart"
+            desc="Revolutionize your shopping experience with our AI-powered smart shopping carts. Enjoy a seamless, hassle-free, and personalized shopping journey with real-time assistance and effortless checkout."
+          />
+          <ServicesCard
+            img={image2}
+            alt="image2"
+            title="Saarthi Local Marketplace"
+            desc="Discover and shop from local businesses with ease. Our platform connects you to a wide range of local products and services, promoting sustainable and community-focused shopping."
+          />
+          <ServicesCard
+            img={image3}
+            alt="image3"
+            title="Mobile App"
+            desc="Stay connected on the go with our intuitive mobile app. Find local stores, track your orders, and get exclusive deals right at your fingertips."
+          />
+        </div>
+        <h2 className="text-2xl">
+          to our{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-yellow-600">
+            partner businesses
+          </span>{" "}
+        </h2>
+        <div className="md:flex mx-6 md:mx-12">
+          <ServicesCard
+            img={image1}
+            alt="image1"
+            title="ONDC Integration and Advanced POS Systems"
+            desc="Digitize your business and expand your reach with our ONDC integration. Manage your business efficiently with our cutting-edge POS systems, featuring inventory management, order tracking, customer analytics, and seamless online platform integration."
+          />
+          <ServicesCard
+            img={image2}
+            alt="image2"
+            title="Saarthi Local Marketplace"
+            desc="Discover and shop from local businesses with ease. Our platform connects you to a wide range of local products and services, promoting sustainable and community-focused shopping."
+          />
+          <ServicesCard
+            img={image3}
+            alt="image3"
+            title="Mobile App"
+            desc="Stay connected on the go with our intuitive mobile app. Find local stores, track your orders, and get exclusive deals right at your fingertips."
+          />
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+      <section className="my-6 md:my-12 p-6 md:p-12 bg-teal-600 md:flex md:justify-between">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-3xl md:text-5xl leading-6 p-4 text-stone-100">
+            Hear from our{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-amber-300">
+              customers
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </h1>
+          <button className="ml-4 bg-white p-3 rounded-2xl text-black transition-all w-fit  font-bold">
+            See more
+          </button>
+        </div>
+        <div className="md:flex md:w-3/4 md:justify-end">
+          <ReviewCard
+            img={image1}
+            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat. "
+            name="John Doe"
+            desc="CEO, ABC Company"
+          />
+          <ReviewCard
+            img={image1}
+            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat."
+            name="John Doe"
+            desc="CEO, ABC Company"
+          />
+          <ReviewCard
+            img={image1}
+            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat."
+            name="John Doe"
+            desc="CEO, ABC Company"
+          />
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section className="my-6 md:my-12 p-6 md:p-12">
+        <h1 className="text-3xl md:text-5xl font-bold py-4">
+          Frequently Asked Questions
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <FAQCard
+            question="What is Saarthi AI Pvt Ltd?"
+            answer="Saarthi AI Pvt Ltd is a technology-based platform that connects customers with local businesses, offering a curated selection of products and services that promote healthy living, sustainability, and cultural authenticity."
+          />
+          <FAQCard
+            question="How does Saarthi AI work?"
+            answer="Saarthi AI utilizes artificial intelligence algorithms to personalize the shopping experience, providing users with tailored product recommendations, content, and user interfaces based on their preferences and behavior."
+          />
+          <FAQCard
+            question="What kinds of products are available on Saarthi AI?"
+            answer="Saarthi AI offers a wide range of products, including locally-made handicrafts, eco-friendly goods, organic foods, wellness supplements, and cultural experiences from different regions of India."
+          />
+          <FAQCard
+            question="Are the products on Saarthi AI sustainable and eco-friendly?"
+            answer="Yes, Saarthi AI prioritizes sustainability and eco-friendliness, showcasing products that are made using environmentally-conscious practices, sustainable materials, and ethical production methods."
+          />
+          <FAQCard
+            question="How can I shop on Saarthi AI?"
+            answer="To shop on Saarthi AI, simply browse through the platform's offerings, add desired items to your cart, and proceed to checkout. You can also use the AI-powered search and recommendation features to discover new products based on your preferences."
+          />
+          <FAQCard
+            question="Does Saarthi AI offer delivery services?"
+            answer="Yes, Saarthi AI provides convenient delivery options, including same-day delivery, scheduled delivery slots, and contactless delivery, to ensure that your orders are delivered to your doorstep in a timely and efficient manner."
+          />
+          <FAQCard
+            question="Can I return or exchange products purchased on Saarthi AI?"
+            answer="Yes, Saarthi AI offers a hassle-free return and exchange policy. If you are not satisfied with your purchase for any reason, you can return the item(s) within a specified period for a refund or exchange."
+          />
+          <FAQCard
+            question="How does Saarthi AI support local businesses?"
+            answer="Saarthi AI partners with local artisans, craftsmen, and businesses to promote their products and services on the platform, helping them reach a wider audience and grow their customer base."
+          />
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className="m-6 md:m-12 rounded-3xl p-12 bg-rose-500">
+        <div className="md:flex">
+          <div className="md:w-2/3">
+            <h1 className="text-3xl md:text-5xl font-bold text-white">
+              Subscribe to our newsletter
+            </h1>
+            <h2 className="text-rose-100">Enjoy exclusive offers for subscribers only</h2>
+          </div>
+          <div>
+            <input
+              name="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="Enter your email address"
+              className="w-full p-2 bg-white placeholder:text-gray-400 rounded-lg"
+            />
+            <button className="bg-white text-rose-500 p-2 my-2 rounded-md">Subscribe</button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
