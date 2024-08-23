@@ -5,6 +5,11 @@ import image2 from "../public/carousel-hero/image2.webp";
 import image3 from "../public/carousel-hero/image3.jpg";
 import image4 from "../public/carousel-hero/image4.jpg";
 
+import cartImg from "../public/images/cart.jpeg";
+import marketplaceImg from "../public/images/localmarketplace.jpeg";
+import mobileAppImg from "../public/images/mobileapp.jpeg";
+import ondcImg from "../public/images/ondc.jpeg";
+
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
@@ -123,20 +128,23 @@ export default function Home() {
 
         <div className="md:flex mx-6 md:mx-12">
           <ServicesCard
-            img={image1}
-            alt="image1"
+            id={1}
+            img={cartImg}
+            alt="cart"
             title="Smart Shopping Cart"
             desc="Revolutionize your shopping experience with our AI-powered smart shopping carts. Enjoy a seamless, hassle-free, and personalized shopping journey with real-time assistance and effortless checkout."
           />
           <ServicesCard
-            img={image2}
-            alt="image2"
+            id={2}
+            img={marketplaceImg}
+            alt="Local Marketplace"
             title="Saarthi Local Marketplace"
             desc="Discover and shop from local businesses with ease. Our platform connects you to a wide range of local products and services, promoting sustainable and community-focused shopping."
           />
           <ServicesCard
-            img={image3}
-            alt="image3"
+            id={3}
+            img={mobileAppImg}
+            alt="Mobile App"
             title="Mobile App"
             desc="Stay connected on the go with our intuitive mobile app. Find local stores, track your orders, and get exclusive deals right at your fingertips."
           />
@@ -149,20 +157,23 @@ export default function Home() {
         </h2>
         <div className="md:flex mx-6 md:mx-12">
           <ServicesCard
-            img={image1}
-            alt="image1"
+            id={4}
+            img={ondcImg}
+            alt="ONDC"
             title="ONDC Integration and Advanced POS Systems"
             desc="Digitize your business and expand your reach with our ONDC integration. Manage your business efficiently with our cutting-edge POS systems, featuring inventory management, order tracking, customer analytics, and seamless online platform integration."
           />
           <ServicesCard
-            img={image2}
-            alt="image2"
+            id={5}
+            img={marketplaceImg}
+            alt="Local Marketplace"
             title="Saarthi Local Marketplace"
             desc="Discover and shop from local businesses with ease. Our platform connects you to a wide range of local products and services, promoting sustainable and community-focused shopping."
           />
           <ServicesCard
-            img={image3}
-            alt="image3"
+            id={6}
+            img={mobileAppImg}
+            alt="Mobile App"
             title="Mobile App"
             desc="Stay connected on the go with our intuitive mobile app. Find local stores, track your orders, and get exclusive deals right at your fingertips."
           />
@@ -184,21 +195,21 @@ export default function Home() {
         <div className="md:flex md:w-3/4 md:justify-end">
           <ReviewCard
             img={image1}
-            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat. "
-            name="John Doe"
-            desc="CEO, ABC Company"
+            review="Saarthi AI has transformed the way we do business. The ONDC integration and advanced POS systems have streamlined our operations and helped us reach more customers. Our sales have increased, and managing inventory is now a breeze!"
+            name="Amit Verma"
+            desc="Owner of Verma Groceries"
           />
           <ReviewCard
             img={image1}
-            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat."
-            name="John Doe"
-            desc="CEO, ABC Company"
+            review="Shopping with Saarthi AI's smart shopping cart was an amazing experience. It made my shopping trip so much easier and faster. I love the personalized recommendations and the smooth checkout process. Highly recommend!"
+            name="Priya Sharma"
+            desc="Customer"
           />
           <ReviewCard
             img={image1}
-            review="Laborum elit elit voluptate amet cillum tempor id. Elit ad id pariatur adipisicing dolore labore. Est esse aute culpa laborum esse voluptate esse exercitation anim in consectetur minim. Cupidatat amet labore amet eu esse voluptate non fugiat."
-            name="John Doe"
-            desc="CEO, ABC Company"
+            review="Saarthi AI has taken our business to the next level. The integration with ONDC and the seamless inventory management have allowed us to serve more customers efficiently. The analytics insights are a game changer for our growth!"
+            name="Ravi Patel"
+            desc="Owner of Patel Supermarket"
           />
         </div>
       </section>
@@ -249,7 +260,9 @@ export default function Home() {
             <h1 className="text-3xl md:text-5xl font-bold text-white">
               Subscribe to our newsletter
             </h1>
-            <h2 className="text-rose-100">Enjoy exclusive offers for subscribers only</h2>
+            <h2 className="text-rose-100">
+              Enjoy exclusive offers for subscribers only
+            </h2>
           </div>
           <div>
             <input
@@ -261,7 +274,9 @@ export default function Home() {
               placeholder="Enter your email address"
               className="w-full p-2 bg-white placeholder:text-gray-400 rounded-lg"
             />
-            <button className="bg-white text-rose-500 p-2 my-2 rounded-md">Subscribe</button>
+            <button className="bg-white text-rose-500 p-2 my-2 rounded-md hover:bg-rose-100 hover:text-rose-600 transition-all">
+              Subscribe
+            </button>
           </div>
         </div>
       </section>
