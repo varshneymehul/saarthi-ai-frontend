@@ -39,7 +39,7 @@ function Footer() {
         </div>
       </div>
 
-      <div class="border-y border-y-white/20 py-4 items-center justify-between w-full mt-6">
+      <div className="border-y border-y-white/20 py-4 items-center justify-between w-full mt-6">
         <div className="flex items-center justify-start gap-x-4">
           <a href="/legal/terms" className="text-white text-sm">
             Terms &amp; Conditions

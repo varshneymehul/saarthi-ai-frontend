@@ -2,10 +2,10 @@ import React from "react";
 
 function FAQCard({ question, answer }) {
   return (
-    <div class="mb-10">
-      <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900">
+    <div className="mb-10">
+      <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900">
         <svg
-          class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+          className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ function FAQCard({ question, answer }) {
         </svg>
         {question}
       </h3>
-      <p class="text-gray-500 dark:text-gray-400">{answer}</p>
+      <p className="text-gray-500 dark:text-gray-400">{answer}</p>
     </div>
   );
 }

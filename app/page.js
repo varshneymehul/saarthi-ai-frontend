@@ -113,9 +113,9 @@ export default function Home() {
         <h1 className="text-3xl md:text-5xl p-4 text-stone-800">
           Services we offer
         </h1>
-        <div class="relative flex py-5 items-center">
-          <div class="flex-grow border-t border-gray-800"></div>
-          <span class="flex-shrink mx-4 ">
+        <div className="relative flex py-5 items-center">
+          <div className="flex-grow border-t border-gray-800"></div>
+          <span className="flex-shrink mx-4 ">
             <h2 className="text-2xl">
               to our{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-lime-800">
@@ -123,7 +123,7 @@ export default function Home() {
               </span>{" "}
             </h2>
           </span>
-          <div class="flex-grow border-t border-gray-800"></div>
+          <div className="flex-grow border-t border-gray-800"></div>
         </div>
 
         <div className="md:flex mx-6 md:mx-12">
